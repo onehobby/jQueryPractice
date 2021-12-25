@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// body태그 영역 안에서 p태그 중에서 제일 처음에 있는 p태그만 선택된다.
+		$("p:first").css("background-color", "yellow");
+		// body 태그 영역 안에서 p 태그 중 각 영역별 처음 p태그가 선택된다.
+		// 각 영역별 처음 태그가 p태그가 아닌 경우 선택되지 않는다.
+		$("p:first-child").css("color","orange");
+		// body태그 안에서 p태그 중 각 영역별 가장 처음 p태그가 선택되고
+		// 각 영역별 가장 처음 태그가 p태그가 아닌 경우에도 가장 처음 나오는 p태그가 선택된다.
+		// 각 영역별 가장 처음 태그가 선택된다고 볼 수 있다.
+		$("p:first-of-type").css("font-size", "30px");
+	})
+</script>
+</head>
+<body>
+	<p>p 태그</p>
+	<hr/>
+	<div>
+		<p>div안의 p 태그</p>
+		<p>div안의 p 태그</p>
+		<p>div안의 p 태그</p>
+	</div>
+	<hr/>
+	<div>
+		<div>div 안의 div태그</div>
+	</div>
+</body>
+</html>

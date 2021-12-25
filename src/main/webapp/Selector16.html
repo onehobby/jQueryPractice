@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// title 속성의 속성명이 'aa'인 것만 선택된다
+		$("p[title ~= 'aa']").css("color","red");
+		// title 속성의 속성명중 'aa'가 포함된것을 선택한다.
+		$("p[title *= 'aa']").css("color","blue");
+	})
+</script>
+</head>
+<body>
+	<p title="aaa4">title이 aaa4인 p태그</p>
+	<p title="aaa5">title이 aaa4인 p태그</p>
+	<p title="aa a6">title이 aa a6인 p태그 </p>
+	<p title="aa">title이 aa인 p태그</p>
+</body>
+</html>

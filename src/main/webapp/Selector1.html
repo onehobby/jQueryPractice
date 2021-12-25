@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("div").css("background-color","yellow");
+		$("p").css("background-color","blue");
+		
+		// each문을 돌릴 시 선언된 순서대로 가져옴
+		$("div, p").each(function(idx, obj) {
+			console.log(obj);
+		});
+		
+		$("#a1, #a2").css("background-color","green");
+	})
+</script>
+</head>
+<body>
+	<div id="a1">div 1</div>
+	<p id="a2">p1</p>
+	<div>div 2</div>
+	<p>p2</p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>기본선택자</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	/* 페이지의 모든 태그들을 선택 후 css효과를 먹임 */
+	$(function() {
+		$("*").css("background-color", "yellow");
+		
+		// 태그이름으로 가져올 경우 배열로 가져옴
+		$("p").css("background-color", "green");
+		$("div").css("background-color", "blue");
+		
+		$("#test1").css("color", "white");
+		$("#test2").css("color", "red");
+		
+		$(".test3").css("color", "orange");
+		
+	})
+</script>
+</head>
+<body>
+	<p id="test1">문자열1</p>
+	<p class="test3">문자열2</p>
+	<div id="test2">문자열3</div>
+	<div class="test3">문자열4</div>
+</body>
+</html>

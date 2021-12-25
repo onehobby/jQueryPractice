@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 각 영역에 p태그가 하나만 존재하면 선택된다. 다른태그가 존재하면 선택되지 않는다.
+		$("p:only-child").css("background-color", "yellow");
+		// 각 영역에 p태그가 하나만 존재하면 선택된다. 다른 태그가 존재해도 선택된다.
+		$("p:only-of-type").css("background-color", "red");
+	})
+</script>
+</head>
+<body>
+	<div>
+		<p>p 태그</p>
+		<p>p 태그</p>
+	</div>
+	<hr/>
+	<div>
+		<p>p 태그</p>
+	</div>
+	<hr/>
+	<div>
+		<p>p 태그</p>
+		<div>div 태그</div>
+	</div>
+</body>
+</html>

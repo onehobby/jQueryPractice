@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>window.onload</title>
+<script type="text/javascript">
+/* 1. window 객체에 onload라는 변수에 익명함수를 정의해놓은 형태 
+ * 2. window.onload가 실행될 때 마다 onload변수에 함수가 재정의되므로
+ *	  값이 누적되지 않고 새로 정의된다
+ * 3. 따라서 기대했던것과 달리 마지막 window.onload만 결과값으로 표출되는것을 알 수 있다.
+ */
+	window.onload = function() {
+		var result = document.getElementById('result');
+		result.innerHTML += "on load1<br/>"
+	}
+	window.onload = function() {
+		var result = document.getElementById('result');
+		result.innerHTML += "on load2<br/>"
+	}
+	window.onload = function() {
+		var result = document.getElementById('result');
+		result.innerHTML += "on load3<br/>"
+	}
+</script>
+</head>
+<body>
+	<div id="result"></div>
+</body>
+</html>

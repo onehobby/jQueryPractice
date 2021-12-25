@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 전체 p태그 중 인덱스번호가 n보다 큰 모든 p태그, 이 때 인덱스번호는 0부터 시작
+		$("p:gt(0)").css("background-color", "yellow");
+		// 전체 p태그 중 인덱스번호가 n보다 작은 모든 p 태그, 이 때 인덱스 번호는 0부터 시작
+		$("p:lt(1)").css("background-color","red");
+		// 각 영역별 p태그 중 뒤에서 n번째 인덱스 번호를 가지고 있는 p태그
+		// 이 때 인덱스 번호는 1부터 시작
+		// 뒤에서 n번째 인덱스 번호를 가지고 있는 태그가 p태그가 아닐 경우 선택되지 않음
+		$("p:nth-last-child(1)").css("font-size", "30px");
+		// 각 영역별 p태그 중 뒤에서 n번째 인덱스 번호를 가지고 있는 p태그
+		// 이 때 인덱스 번호는 1부터 시작
+		// 인덱스 번호를 매길 때 각 영역에서 인덱스 번호를 부여한다
+		$("p:nth-last-of-type(2)").css("color","orange");
+	});
+</script>
+</head>
+<body>
+	<div>
+		<p>p 태그</p>
+		<p>p 태그</p>
+		<p>p 태그</p>
+	</div>
+	<hr/>
+	<div>
+		<p>p 태그</p>
+		<p>p 태그</p>
+		<p>p 태그</p>
+	</div>
+	<hr/>
+	<div>
+		<p>p 태그</p>
+		<p>p 태그</p>
+		<div>div 태그</div>
+	</div>
+</body>
+</html>

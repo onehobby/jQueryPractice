@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 현재 focus되어지는 태그를 선택한다.
+	$(function() {
+		$(":focus").css("background-color", "yellow");
+	})
+</script>
+</head>
+<body>
+	<input type="text" autofocus="autofocus" />
+	<input type="text"/>
+</body>
+</html>

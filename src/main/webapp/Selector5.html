@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 선택자1 태그 바로 다음에 있는 태그가 p태그일 경우에만 적용된다.
+		// 선택자1 태그 바로 다음에 있는 태그가 div 태그일 경우 적용되지 않는다.
+		$("#a1 + p").css("background-color", "yellow");
+	})
+</script>
+</head>
+<body>
+	<p>p 태그</p>
+	<p>p 태그</p>
+	<p id="a1">p 태그 a1</p>
+	<div>div 태그</div>
+	<p>p 태그</p>
+	<p>p 태그</p>
+	<p>p 태그</p>
+	<p>p 태그</p>
+	<p>p 태그</p>
+</body>
+</html>
