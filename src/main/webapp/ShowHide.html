@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 선택자로 지정된 html태그를 사라지게한다.
+	// 선택자로 지정된 html태그를 지정한 시간동안 서서히 사라지게 한다.
+	// "fast", "slow"로 지정하면 적당한 시간동안 효과가 나타남
+	function div_hide() {
+// 		$("#a1").hide();
+// 		$("#a1").hide(1000);
+		$("#a1").hide("slow");
+	}
+	// 선택자로 지정된 html태그를 보여지게한다.
+	// 선택자로 지정된 html태그를 지정한 시간동안 서서히 나타나게 한다.
+	// "fast", "slow"로 지정하면 적당한 시간동안 효과가 나타남
+	function div_show() {
+// 		$("#a1").show();			
+// 		$("#a1").show(1000);
+		$("#a1").show("slow");
+	}
+	// 선택자로 지정된 html 태그를 보여지거나 사라지게한다.
+	// 선택자로 지정된 html 태그를 지정한 시간동안 서서히 보여지거나 서서히 사라지게 한다.
+	// "fast", "slow"로 지정하면 적당한 시간동안 효과가 나타남
+	function div_toggle() {
+// 		$("#a1").toggle();
+// 		$("#a1").toggle(1000);
+		$("#a1").toggle("fast");
+	}
+</script>
+<style type="text/css">
+	#a1 {
+		border: 1px solid black;
+		background-color: yellow;
+		width: 200px;
+		height: 200px;
+	}
+</style>
+</head>
+<body>
+	<button onclick="div_hide()">hide</button>
+	<button onclick="div_show()">show</button>
+	<button onclick="div_toggle()">toggle</button>
+	<div id="a1"></div>
+</body>
+</html>

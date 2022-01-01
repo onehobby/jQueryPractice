@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// on을 통해 dom객체에 이벤트를 정의한다.
+		// 선택된 태그 클릭 시 click 이벤트가 발생한다.
+		$("#a1").on("click", function() {
+			alert("a1");
+		});
+		// 선택된 태그 클릭 시 최초 한번만 이벤트가 발생되고 해당 이벤트는 삭제된다.
+		$("#a2").one("click", function() {
+			alert("a2");
+		});
+		$("#a3").on({
+		// on을 통해 해당 태그에 여러개의 이벤트를 정의할 수 있다.
+			click : function() {
+				alert("click")
+			},
+			mouseenter : function() {
+				$("#a3").css("background-color", "black");
+			},
+			mouseleave : function() {
+				$("#a3").css("background-color", "");
+			}
+		})
+	});
+	// 선택된 태그에 지정된 이벤트를 삭제한다.
+	function remove_event() {
+		$("#a1").off("click");
+	}
+</script>
+</head>
+<body>
+<h3 id="a1">a1</h3>
+<button type="button" onclick="remove_event()">이벤트 제거</button>
+<h3 id="a2">a2</h3>
+<h3 id="a3">a3</h3>
+</body>
+</html>

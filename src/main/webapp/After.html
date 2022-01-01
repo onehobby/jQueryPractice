@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+	#a1 {
+		border: 1px solid black;
+	}
+</style>
+<script type="text/javascript">
+	// 선택자로 선택된 태그 뒤에 html 태그 추가
+	function after1() {
+		$("#a1").after("<p>새로 추가한 p1태그</p>")
+	}
+	// 선택자로 선택된 태그 뒤에 html 객체 생성하여 추가
+	function after2() {
+		var p = $("<p>");
+		p.text("새롭게 추가한 p1태그");
+		$("#a1").after(p)
+	}
+	// 선택된 태그 앞에 html 태그 추가
+	function before1() {
+		$("#a1").before("<p>새로 추가한 p2 태그</p>");
+	}
+	// 선택된 태그 앞에 html 객체 생성하여 추가
+	function before2() {
+		var p = $("<p>");
+		p.text("새로 추가한 p2 태그")
+		$("#a1").before(p);
+	}
+</script>
+</head>
+<body>
+	<div id="a1">
+		<p>p 태그</p>
+	</div>
+	<button onclick="after1()">html 코드를 뒤에 추가</button>
+	<button onclick="after2()">html 객체를 뒤에 추가</button>
+	<button onclick="before1()">html 코드를 앞에 추가</button>
+	<button onclick="before2()">html 객체를 앞에 추가</button>
+</body>
+</html>

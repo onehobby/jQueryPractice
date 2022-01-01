@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 지정된 선택자1과 같은 계층의 바로 앞 태그가 선택된다.
+		$("#a1").prev().css("border-color","red");
+		// 지정된 선택자1과 같은 계층의 모든 앞 태그가 선택된다.
+		$("#a1").prevAll().css("border-style","dashed");
+		// 지정된 선택자1과 선택자2의 사이의 같은 계층의 모든 태그들이 선택된다.
+		$("#a1").prevUntil("#a2").css("color","red");		
+	})
+</script>
+<style type="text/css">
+	div {
+		border: 2px solid black;
+		padding: 10px;
+		margin-bottom: 10px;
+	}
+</style>
+</head>
+<body>
+	<div id="a2">div 1</div>
+	<div>div 2</div>
+	<div>div 3</div>
+	<div id="a1">div 4</div>
+	<div>div 5</div>
+</body>
+</html>

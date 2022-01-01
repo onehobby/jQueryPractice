@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	// 지정된 선택자1 바로 하위의 자식들만 선택된다.
+	$("#a1").children().css("border-color","red");
+	// 지정된 선택자1 바로 하위의 자식들 중 선택자2에 해당되는 자식들만 선택된다.
+	$("#a1").children(".c1").css("border-color", "blue");
+	// 지정된 선택자1 하위의 선택자2에 해당하는 모든 자식, 후손들이 선택된다.
+	$("#a1").find("div").css("color","red");
+})
+</script>
+<style type="text/css">
+	div {
+		border: 2px solid black;
+		padding: 10px;
+	}
+</style>
+</head>
+<body>
+	<div id="a1">
+		div
+		<div>
+			div 1
+			<div>
+				div 1-2
+			</div>
+		</div>
+		<div class="c1">
+			div 2
+			<div>
+				div 2-1
+			</div>
+		</div>
+	</div>
+</body>
+</html>

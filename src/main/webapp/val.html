@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	function getA1() {
+		var value = $("#a1").val();
+		alert(value);
+	}
+	
+	function setA1() {
+		$("#a1").val('1');
+	}
+	
+</script>
+</head>
+<body>
+	<input type="text" id="a1">
+	<br/>
+	<button onclick="getA1()">value값 가져오기</button>
+	<button onclick="setA1()">value값 세팅하기</button>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 선택자로 지정한 태그의 사이즈를 width, height 등의 속성을 통해 지정할 수 있다.
+	// "slow", "fast", 지정한 시간 동안 animation이 동작한다.
+	function setSize() {
+		$("#a1").animate({
+			width : 400
+			, height : 400
+		}, "slow");
+	}
+	// 선택자로 지정한 태그의 투명도를 opacity 속성을 통해 지정할 수 있다.
+	// "slow", "fast", 지정한 시간 동안 animation이 동작한다. 
+	function setOpacity() {
+		$("#a1").animate({
+			opacity : 0
+		}, "slow");
+	}
+	// 선택자로 지정한 태그의 위치를 조절할 수 있다.
+	// "left", "right", "top", "bottom"과 같은 속성을 통해 위치를 조절할 수 있다.
+	// "left" :: 왼쪽에서 얼만큼, "right" :: 오른쪽에서 얼만큼
+	// "top" :: 위에서 얼만큼, "bottom" :: 아래에서 얼만큼
+	// !!이 때 css 속성 중 position 속성의 값을 relative로 설정해야한다.
+	function setPosition() {
+		$("#a1").animate({
+			left : 100
+			, top : 100
+		}, "slow")
+	}
+	// 기본 jQuery에서 제공하는 animate기능으로는 태그의 크기 조절, 투명도 조절, 위치조절 정도이다.
+	// 하지만 jQuery그룹에서 제공하는 jQueryUI를 사용하면 다양한 css 속성을 핸들링할 수 있다.
+	function setBackgroundColor() {
+		$("#a1").animate({
+			backgroundColor : yellow			
+		}, "slow")
+	}
+	// 여러개의 css 효과를 설정할 수 있다.
+	function setTotal() {
+		$("#a1").animate({
+			width : 400
+			, height : 400
+			, opacity : 0
+			, left : 100
+			, right : 100
+		}, "slow")
+	}
+	// 메소드 chaining을 통한 css 순차 적용
+	// delay 메소드를 통해 적용될 css효과 수행 후 지연시간을 설정할 수 있다.
+	function setSequence() {
+		$("#a1").animate({
+			width : 400
+			, height : 300
+		}, "slow").delay(1000).animate({
+			left : 100
+			, right : 100
+		}, "slow").delay(1000).animate({
+			opacity : 0
+		})
+	}
+</script>
+<style type="text/css">
+	#a1 {
+		border: 1px solid black;
+		background-color: yellow;
+		width: 200px;
+		height: 200px;
+		/* jquery animation을 이용해서 위치를 변경시키기 위해서 필요한 속성 */
+		position : relative;
+	}
+</style>
+</head>
+<body>
+	<button onclick="setSize()">size 설정</button>
+	<button onclick="setOpacity()">투명도 조절</button>
+	<button onclick="setPosition()">위치 조절</button>
+	<button onclick="setBackgroundColor()">위치 조절</button>
+	<button onclick="setTotal()">종합 설정</button>
+	<button onclick="setSequence()">순차 설정</button>
+	<div id="a1"></div>
+</body>
+</html>

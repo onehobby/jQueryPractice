@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$(":enabled").css("background-color", "yellow");
+		$(":disabled").css("background-color", "red");
+	})
+</script>
+</head>
+<body>
+	<input type="text"><br/>
+	<input type="password"><br/>
+	<input type="text" disabled="disabled"><br/>
+	<input type="password" disabled="disabled"><br/>
+</body>
+</html>

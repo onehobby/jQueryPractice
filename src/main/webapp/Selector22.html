@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// input 태그 중 타입 속성이 text인 태그 선택
+		$(":text").css("color","blue");
+		// input 태그 중 타입 속성이 password인 태그 선택
+		$(":password").css("color","red");
+		// 아이디가 test1이고 input태그의 type 속성이 text인 태그 선택
+		$("#test1:input[type=text]").css("background-color", "red");
+		// input 태그의 data-set속성의 값이 1인 태그 선택
+		$(":input[data-set=1]").css("background-color", "yellow");
+		
+	})
+</script>
+</head>
+<body>
+	<input id="test1" type="text" data-set="1"><br/>
+	<input type="password"><br/>
+</body>
+</html>

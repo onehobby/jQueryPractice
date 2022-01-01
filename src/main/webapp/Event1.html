@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 클릭 시
+		$("#a1").click(function() {
+			$("#a1").css("background-color", "black");
+			$("#a1").css("color","white");
+		});
+		// 더블클릭 시
+		$("#a2").dblclick(function() {
+			$("#a2").css("background-color","red");
+			$("#a2").css("color","yellow");
+		});
+		// 마우스가 태그 영역에 들어왔을 때
+		$("#a3").mouseenter(function() {
+			$("#a3").css("background-color","green");
+			$("#a3").css("color","blue");
+		});
+		// 마우스가 태그 영역을 벗어났을 때
+		$("#a3").mouseleave(function() {
+			$("#a3").css("background-color", "");
+			$("#a3").css("color", "");
+		});
+		// 마우스가 태그를 클릭할때
+		$("#a4").mousedown(function() {
+			$("#a4").css("background-color","black");
+			$("#a4").css("color", "grey");
+		});
+		// 마우스가 태그를 클릭하고 뗐을 때
+		$("#a4").mouseup(function() {
+			$("#a4").css("background-color","");
+			$("#a4").css("color","");
+		});
+		// 마우스가 들어왔을 때, 나갔을 때 이벤트에 대한 익명함수를 2개 정의해야한다.
+		$("#a5").hover(function() {
+			$("#a5").css("background-color","yellow");			
+		}
+		, function() {
+			$("#a5").css("background-color", "");	
+		});
+		// 포커스가 주어졌을 때
+		$("#a6").focus(function() {
+			$("#a6").css("background-color","yellow");
+		});
+		// 포커스를 잃었을 때
+		$("#a6").blur(function() {
+			$("#a6").css("background-color", "");
+		})
+	});
+</script>
+</head>
+<body>
+	<h3 id="a1">click</h3>
+	<h3 id="a2">double click</h3>
+	<h3 id="a3">mouse enter / leave</h3>
+	<h3 id="a4">mouse down/up</h3>
+	<h3 id="a5">hover</h3>
+	<br/>
+	<input type="text" id="a6">
+</body>
+</html>

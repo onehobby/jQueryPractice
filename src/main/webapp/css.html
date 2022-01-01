@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	// 선택자로 선택된 태그에 클래스를 추가
+	function addClass() {
+		$("#a1").addClass("active");
+	}
+	// 선택자로 선택된 태그에 클래스를 제거
+	function removeClass() {
+		$("#a1").removeClass("active");	
+	}
+	// 선택자로 선택된 태그에 클래스가 있으면 제거, 없으면 추가
+	function toggleClass() {
+		$("#a1").toggleClass("active");	
+	}
+</script>
+<style type="text/css">
+	.active {
+		background-color: black;
+		color : white;
+	}
+</style>
+
+</head>
+<body>
+	<h1 id="a1">h1 태그</h1>
+	<button onclick="addClass()">CSS 클래스 추가하기</button>
+	<button onclick="removeClass()">CSS 클래스 제거하기</button>
+	<button onclick="toggleClass()">CSS 클래스 전환하기</button>
+</body>
+</html>

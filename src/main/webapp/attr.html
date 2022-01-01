@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+function getAttr() {
+	// #a1의 src 속성의 값을 읽어온다.
+	var src = $("#a1").attr("src");
+	// #a1의 width 속성의 값을 읽어온다.
+	var width = $("#a1").attr("width");
+	// #a1의 height 속성의 값을 읽어온다.
+	var height = $("#a1").attr("height");
+	// #a1의 id 속성의 값을 읽어온다.
+	var id = $("#a1").attr("id");
+	
+	$("#result").html("src : " + src + "<br/>"
+						+ "width : " + width + "<br/>"
+						+ "height : " + height + "<br/>"
+						+ "id : " + id + "<br/>");
+}
+
+function setAttr() {
+	$("#a1").attr("width", 255);
+	$("#a1").attr("height", 255);
+}
+
+</script>
+</head>
+<body>
+	<!-- /image/text.gif로 하는 순간 절대경로로 변경되어서 호출되지않음 -->
+	<img src="image/text.gif" width="121" height="26" id="a1">
+	<br/>
+	<div id="result"></div>
+	<button onclick="getAttr()">속성 읽어오기</button>
+	<button onclick="setAttr()">속성 설정하기</button>
+</body>
+</html>
