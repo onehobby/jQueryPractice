@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	function getText() {
+		$.ajax({
+			// 자원의 주소
+			url : "data.txt"
+			// 통신방식 get or post
+			, type : "post"
+			// 서버로 부터 제공받는 데이터의 타입, text 타입의 데이터가 들어온다.
+			, dataType : "text"
+			// 성공 시 실행시킬 함수 rec_date 매개변수에 서버로 부터 받은 결과값이 들어옴
+			, success : function(rec_data) {
+				$("#result").text(rec_data);
+			}
+		})	
+	}
+	
+	function getHtml() {
+		$.ajax({
+			url : "data2.html"
+			,type : "post"
+			, dataType : "html"
+			// 서버로 부터 받을 데이터 타입이 html 태그 형식이다.
+			, success : function(rec_data) {
+				$("#result").html(rec_data)	
+			}
+		});
+	}
+	
+	function getXml() {
+		$.ajax({
+			url : "data3.xml"
+			,type : "post"
+			,dataType : "xml"
+			,success : function(rec_data) {
+				var $data = $(rec_data).find("data");
+				$data.each(function(idx, obj) {
+					var $str1 = $(obj).find("str1");
+					var $str2 = $(obj).find("str2");
+					
+					var str11 = $str1.text();
+					var str22 = $str2.text();
+					
+					$("#result").append("str1 : " + str11 + "<br/>");
+					$("#result").append("str2 : " + str22 + "<br/>");
+					
+				})
+			}
+		})	
+	}
+	
+	function getJson() {
+		$.ajax({
+			url : "data4.json"
+			,type : "post"
+			,dataType : "json"
+			// json 데이터가 객체형식으로 넘어온다.
+			,success : function(rec_data) {
+				$("#result").append("data1 : " + rec_data.data1 + "<br/>");
+				$("#result").append("data2 : " + rec_data.data2 + "<br/>");
+				$("#result").append("data3 : " + rec_data.data3 + "<br/>");
+			}
+		})
+	}
+	
+</script>
+</head>
+<body>
+	<button onclick="getText()">문자열 데이터</button>
+	<button onclick="getHtml()">HTML 데이터</button>
+	<button onclick="getXml()">XML 데이터</button>
+	<button onclick="getJson()">Json 데이터</button>
+	<div id="result"></div>
+</body>
+</html>
